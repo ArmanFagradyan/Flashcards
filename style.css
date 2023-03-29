@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #e1b382;
+    overflow: hidden;
+}
+
+header {
+    background-color: #2d545e;
+    border: 10px ridge #2e7181;
+}
+
+.content__area {
+    height: 100vh;
+    border: 10px ridge #7a5b3d;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+button {
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+    outline: none;
+    cursor: pointer;
+    border: 5px ridge #2e7181;
+    background-color: #3f93a9;
+    box-shadow: 4px 4px rgba(21, 39, 100, 0.95);
+}
+
+button:hover {
+    background-color: rgba(18, 31, 209, 0.37);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+.create__box{
+    width: 33%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 10px 14px 10px;
+    border: 9px ridge #7a5b3d;
+    background-color: #c89666;
+    box-shadow: 5px 5px rgba(46, 33, 15, 0.85);
+}
+
+.create__box textarea{
+    width: 100%;
+    min-height: 85px;
+    font-family: inherit;
+    word-wrap: break-word;
+    background-color: #e3d49c;
+    border: 1px solid;
+    margin: 5px 0 15px 0;
+    padding: 0 10px;
+    resize: none;
+    overflow: hidden;
+    line-height: 28px;
+    font-size:medium;
+    background-image: linear-gradient(transparent, transparent 27px, black 0px);
+    background-size: 100% 28px;
+}
+
+.create__box textarea:focus{
+    outline: none;
+}
+
+.create__box button{
+    width: fit-content;
+}
+
+.create__box h2{
+    text-align: center;
+    color: black;
+    margin-bottom: 15px;
+}
+
+.flashcards{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.flashcard{
+    width: 300px;
+    height: 200px;
+    word-wrap: break-word;
+    margin: 10px;
+    background-color: #e3d49c;
+    box-shadow: 5px 4px rgba(110, 107, 93, 0.514);
+}
+
+.flashcard h2{
+    font-size: 1.2rem;
+}
