@@ -13,11 +13,11 @@ function divMaker(text){
 
     div.className = 'flashcard';
 
-    h2_question.setAttribute('style', "border-top: 1px solid red; padding: 15px; margin-top: 30px");
+    h2_question.setAttribute('style', "border-top: 1px solid red; padding: 15px; margin-top: 30px; user-select: none;");
 
     h2_question.innerHTML = text.my_question;
 
-    h2_answer.setAttribute('style', "text-align: center; display: none; color: red");
+    h2_answer.setAttribute('style', "text-align: center; display: none; color: red; user-select: none;");
 
     h2_answer.innerHTML = text.my_answer;
 
@@ -26,22 +26,12 @@ function divMaker(text){
 
     div.addEventListener("click", function(){
         if(h2_answer.style.display == "none")
-            h2_answer.style.display == "block";
+            h2_answer.style.display = "block";
         else
-            h2_answer.style.display == "none";
+            h2_answer.style.display = "none";
     });
 
     flashcards.appendChild(div);
-}
-
-function clearCards(){
-    localStorage.clear();
-    flashcards.innerHTML = '';
-    contentArray = [];
-}
-
-function showCreateCardBox(){
-    createBox.style.display = "block";
 }
 
 function addNewCard(){
@@ -55,6 +45,16 @@ function addNewCard(){
     divMaker(contentArray[contentArray.length - 1]);
     question.value = '';
     answer.value = '';
+}
+
+function clearCards(){
+    localStorage.clear();
+    flashcards.innerHTML = '';
+    contentArray = [];
+}
+
+function showCreateCardBox(){
+    createBox.style.display = "block";
 }
 
 function hideCreateCardBox(){

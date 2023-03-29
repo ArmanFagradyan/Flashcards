@@ -10,6 +10,7 @@ body {
     font-family: 'Press Start 2P', cursive;
     background-color: #e1b382;
     overflow: hidden;
+    user-select: none;
 }
 
 header {
@@ -51,6 +52,7 @@ button:hover {
 }
 
 .create__box{
+    max-width: 400px;
     width: 33%;
     margin: auto;
     margin-top: 20px;
