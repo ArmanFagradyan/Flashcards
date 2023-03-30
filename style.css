@@ -9,7 +9,7 @@
 body {
     font-family: 'Press Start 2P', cursive;
     background-color: #e1b382;
-    overflow: hidden;
+    overflow: auto;
     user-select: none;
 }
 
@@ -19,7 +19,7 @@ header {
 }
 
 .content__area {
-    height: 100vh;
+    min-height: 100vh;
     border: 10px ridge #7a5b3d;
 }
 
@@ -53,6 +53,7 @@ button:hover {
 
 .create__box{
     max-width: 400px;
+    min-width: 300px;
     width: 33%;
     margin: auto;
     margin-top: 20px;
@@ -102,7 +103,7 @@ button:hover {
     width: 100%;
     margin: auto;
     margin-top: 10px;
-    padding: 0 10px;
+    padding: 0 0;
 }
 
 .flashcard{
@@ -116,4 +117,28 @@ button:hover {
 
 .flashcard h2{
     font-size: 1.2rem;
+}
+
+@media (max-width:768px) {
+    .flashcard{
+        margin: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width:480px) {
+    .nav{
+        flex-direction: column;
+        align-items: center;
+    }
+    .buttons{
+        margin-top: 15px;
+    }
+    .create__box{
+        width: 100%;
+    }
+    .flashcard{
+        width: 100%;
+    }
 }

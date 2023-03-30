@@ -7,22 +7,24 @@ let contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getIt
 
 contentArray.forEach(divMaker);
 function divMaker(text){
-    var div = document.createElement("div");
-    var h2_question = document.createElement("h2");
-    var h2_answer = document.createElement("h2");
+    const div = document.createElement("div");
+    const h2_question = document.createElement("h2");
+    const h2_answer = document.createElement("h2");
+    const delButton = document.createElement("button");
 
     div.className = 'flashcard';
 
     h2_question.setAttribute('style', "border-top: 1px solid red; padding: 15px; margin-top: 30px; user-select: none;");
-
     h2_question.innerHTML = text.my_question;
 
     h2_answer.setAttribute('style', "text-align: center; display: none; color: red; user-select: none;");
-
     h2_answer.innerHTML = text.my_answer;
+
+    delButton.setAttribute('style', "width: 5px; height: 5px; color: red");
 
     div.appendChild(h2_question);
     div.appendChild(h2_answer);
+    div.appendChild(delButton);
 
     div.addEventListener("click", function(){
         if(h2_answer.style.display == "none")
@@ -31,11 +33,15 @@ function divMaker(text){
             h2_answer.style.display = "none";
     });
 
+    delButton.addEventListener("click", () => {
+        div.remove();
+    });
+
     flashcards.appendChild(div);
 }
 
 function addNewCard(){
-    var flashcard_content = {
+    const flashcard_content = {
         'my_question' : question.value,
         'my_answer' : answer.value
     }
