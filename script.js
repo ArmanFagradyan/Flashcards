@@ -10,7 +10,7 @@ function divMaker(text){
     const div = document.createElement("div");
     const h2_question = document.createElement("h2");
     const h2_answer = document.createElement("h2");
-    const delButton = document.createElement("button");
+    const delButton = document.createElement("div");
 
     div.className = 'flashcard';
 
@@ -20,11 +20,13 @@ function divMaker(text){
     h2_answer.setAttribute('style', "text-align: center; display: none; color: red; user-select: none;");
     h2_answer.innerHTML = text.my_answer;
 
-    delButton.setAttribute('style', "width: 5px; height: 5px; color: red");
+    delButton.setAttribute('style', "position: absolute; margin-top: 4px; margin-left: 270px; font-size: 1.5rem; color: red; cursor: pointer;");
+    delButton.textContent = "X";
 
+    div.appendChild(delButton);
     div.appendChild(h2_question);
     div.appendChild(h2_answer);
-    div.appendChild(delButton);
+    
 
     div.addEventListener("click", function(){
         if(h2_answer.style.display == "none")
@@ -34,6 +36,10 @@ function divMaker(text){
     });
 
     delButton.addEventListener("click", () => {
+        contentArray = contentArray.filter(function(card) {
+            return card.my_question !== h2_question.innerHTML;
+        });
+        localStorage.setItem('items', JSON.stringify(contentArray));
         div.remove();
     });
 
