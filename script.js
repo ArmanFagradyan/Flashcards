@@ -5,6 +5,8 @@ const answer = document.getElementById('answer');
 
 let contentArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
+
+// Creating new div for card
 contentArray.forEach(divMaker);
 function divMaker(text){
     const div = document.createElement("div");
@@ -46,6 +48,8 @@ function divMaker(text){
     flashcards.appendChild(div);
 }
 
+
+// Adding new card to the page and LS
 function addNewCard(){
     const flashcard_content = {
         'my_question' : question.value,
@@ -59,16 +63,19 @@ function addNewCard(){
     answer.value = '';
 }
 
+// Clearing cards from page and LS
 function clearCards(){
     localStorage.clear();
     flashcards.innerHTML = '';
     contentArray = [];
 }
 
+// Open create card field
 function showCreateCardBox(){
     createBox.style.display = "block";
 }
 
+// Close create card field
 function hideCreateCardBox(){
     createBox.style.display = "none";
 }
