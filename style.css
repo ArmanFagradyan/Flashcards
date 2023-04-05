@@ -18,6 +18,18 @@ header {
     border: 10px ridge #2e7181;
 }
 
+footer{
+    background-color: #2d545e;
+    border: 10px ridge #2e7181;
+}
+
+.footer__wrapper{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .content__area {
     min-height: 100vh;
     border: 10px ridge #7a5b3d;
@@ -104,6 +116,7 @@ button:hover {
     width: 100%;
     margin: auto;
     margin-top: 10px;
+    margin-bottom: 30px;
     padding: 0 0;
 }
 
@@ -144,4 +157,19 @@ button:hover {
     .flashcard{
         width: 100%;
     }
+}
+
+
+::-webkit-scrollbar {
+    width: 13px;
+    background-color: #eec38b;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #805620;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d19c56;
+    border: 3px inset #9c6721;;
 }
